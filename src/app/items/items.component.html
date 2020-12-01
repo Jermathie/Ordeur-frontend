@@ -1,9 +1,14 @@
 <main class="w3-container">
-  <h2 class="w3-border-top w3-border-bottom w3-border-top">Items</h2>
-  <div class="w3-row-padding"  >
-    <div class="w3-third w3-container w3-border w3-margin" *ngFor="let item of items"  style="width: 30%">
+  <div>
+    <section class="w3-display-container w3-border-bottom w3-border-top w3-row">
+      <h2 class="w3-twothird">Items</h2>
+      <app-item-search class="w3-third w3-display-middle w3-right-align"></app-item-search>
+    </section>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-border w3-margin" *ngFor="let item of items " style="width: 30%" >
       <h3>{{item.name}}</h3>
-      <img src="../src/assets/box.png" alt="image">
+      <img id="image" src="../assets/box2.jpg" alt="image">
       <div>
         <p class="w3-third">Price: € {{item.price}}</p>
         <p class="w3-twothird w3-right-align">{{item.stockUrgency}}</p>
