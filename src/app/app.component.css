@@ -1,0 +1,25 @@
+a {
+  color: #2d89ef;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  footer {
+    position: relative;
+    width: 100%;
+  }
+}
+
+#logo {
+  background-image: url("src/assets/box.png");
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
