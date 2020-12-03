@@ -11,6 +11,10 @@ export class ItemsService {
 
   private itemsUrl: string;
 
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  }
+
   constructor(private httpItems: HttpClient) {
     this.itemsUrl = 'http://localhost:9000/items';
   }
@@ -24,5 +28,9 @@ export class ItemsService {
       return of([])
     }
     return this.httpItems.get<Item[]>(`${this.itemsUrl}/?name=${term}`);
+  }
+
+  createItem(item: Item = {} as Item): Observable<any> {
+    return this.httpItems.post(this.itemsUrl, item, this.httpOptions);
   }
 }

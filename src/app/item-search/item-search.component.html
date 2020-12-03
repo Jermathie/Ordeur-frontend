@@ -1,5 +1,5 @@
 <div id="search-component">
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Filter by name..."/>
   <ul class="search-result">
     <li *ngFor="let item of items$ | async" >
       <a routerLink="/detail/{{item.id}}">

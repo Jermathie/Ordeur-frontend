@@ -18,3 +18,10 @@ footer {
   width: 10%;
   height: 10%;
 }
+#logoFooter{
+  width: 10%;
+  height: 10%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}

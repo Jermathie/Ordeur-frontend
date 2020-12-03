@@ -1,0 +1,11 @@
+.create {
+  background-color: #2C8332;
+  color: #fff;
+  font-size: larger;
+  height: 50px;
+}
+
+.cancel {
+  font-size: larger;
+  height: 50px;
+}

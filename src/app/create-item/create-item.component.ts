@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Item} from "../model/item";
 import {ItemsService} from "../items.service";
 import {NgForm} from "@angular/forms";
@@ -9,15 +9,21 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./create-item.component.css']
 })
 export class CreateItemComponent implements OnInit {
-  items: Item[] = {} as Item[];
+  item: Item = {} as Item;
 
-  constructor(private itemsService: ItemsService) { }
+  constructor(private itemsService: ItemsService) {
+  }
 
   ngOnInit(): void {
   }
 
-  onSubmit(f: NgForm) {
+  onFormSubmit(itemForm: NgForm) {
+    console.log(itemForm);
+    this.itemsService.createItem(this.item);
+  }
 
+  resetItemForm(itemForm: NgForm) {
+    itemForm.resetForm();
   }
 
 }

@@ -1,11 +1,41 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-  <input name="first" ngModel required #first="ngModel">
-  <input name="last" ngModel>
-  <button>CREATE</button>
-  <button>CANCEL</button>
-</form>
+<main class="w3-container">
+  <div>
+    <section class="w3-display-container w3-border-bottom w3-border-top w3-row">
+      <h2 class="w3-twothird">Create Item</h2>
+    </section>
+  </div>
+  <form #itemForm="ngForm" (ngSubmit)="onFormSubmit(itemForm)">
+    <div class="w3-container w3-margin-top w3-text-gray">
+      <div class="w3-row w3-section">
+        <div class="w3-col" style="width:50px"><label>Name</label></div>
+        <div class="w3-col">
+          <input type="text" class="w3-input w3-border" [(ngModel)]="item.name" name="itemName">
+        </div>
+      </div>
+      <div class="w3-row w3-section">
+        <div class="w3-col" style="width:50px"><label>Description</label></div>
+        <div class="w3-col">
+          <textarea class="w3-input w3-border" [(ngModel)]="item.description" name="itemDescription" rows="6" cols="50"></textarea>
+        </div>
+      </div>
+      <div class="w3-row w3-section">
+        <div class="w3-quarter">
+          <label>Price</label>
+          <input type="text" class="w3-input w3-border" [(ngModel)]="item.price" name="itemPrice" placeholder="€">
+        </div>
+        <div class="w3-third w3-margin-left">
+          <label>Amount of Stock</label>
+          <input type="text" class="w3-input w3-border" [(ngModel)]="item.stockUrgency" name="itemStock">
+        </div>
+      </div>
+    </div>
+    <div class="w3-container w3-margin-top">
+      <button class="w3-half w3-round-large create w3-margin-right">CREATE</button>
+      <button class="w3-quarter w3-round-large cancel" (click)="resetItemForm(itemForm)">CANCEL</button>
+    </div>
+  </form>
+</main>
 
-<p>Name: {{ first.value }}</p>
-<p>First name valid: {{ first.valid }}</p>
-<p>Form value: {{ f.value | json }}</p>
-<p>Form valid: {{ f.valid }}</p>
+
+
+
